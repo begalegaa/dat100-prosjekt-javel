@@ -9,7 +9,7 @@ public class Customers {
     // a) Complete constructor
     public Customers(int size) {
 
-        // TODO
+        customers = new Customer[size];
 
     }
 
@@ -19,7 +19,11 @@ public class Customers {
 
         int count = 0;
 
-        // TODO
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] != null) {
+                count++;
+            }
+        }
 
         return count;
     }
@@ -29,8 +33,16 @@ public class Customers {
 
         boolean funnet = false;
         Customer c = null;
+        int i = 0;
+        
+        while (!funnet && i < customers.length) {
+            if (customers[i] != null && customer_id == customers[i].getCustomer_id()) {
+                c = customers[i];
+                funnet = true;
+            }
 
-        // TODO
+            i++;
+        }
 
         return c;
     }
@@ -39,8 +51,16 @@ public class Customers {
     public boolean addCustomer(Customer c) {
 
         boolean inserted = false;
+        int i = 0;
 
-        // TODO
+        while (!inserted && i < customers.length) {
+            if (customers[i] == null) {
+                customers[i] = c;
+                inserted = true;
+            }
+
+            i++;
+        }
 
         return inserted;
     }
@@ -50,8 +70,17 @@ public class Customers {
 
         boolean deleted = false;
         Customer c = null;
+        int i = 0;
 
-        // TODO
+        while (!deleted && i < customers.length) {
+            if (customers[i] != null && customer_id == customers[i].getCustomer_id()) {
+                c = customers[i];
+                customers[i] = null;
+                deleted = true;
+            }
+
+            i++;
+        }
 
         return c;
     }
@@ -59,10 +88,19 @@ public class Customers {
     // f) return reference table with all customers
     public Customer[] getCustomers() {
 
-        Customer[] customers = null;
+        Customer[] result = new Customer[countNonNull()];
+        int i = 0;
+        int j = 0;
 
-        // TODO
+        while (j < result.length) {
+            if (customers[i] != null) {
+                result[j] = customers[i];
+                j++;
+            }
 
-        return customers;
+            i++;
+        }
+
+        return result;
     }
 }
