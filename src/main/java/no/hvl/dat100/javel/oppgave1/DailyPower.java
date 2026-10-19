@@ -71,7 +71,7 @@ public class DailyPower {
         return support;
     }
 
-    private static final double NORGESPRIS_KWH = 0.5;
+    public static final double NORGESPRIS_KWH = 0.5;
 
     // g) compute norges pris for a single day
     public static double computeNorgesPrice(double[] usage) {

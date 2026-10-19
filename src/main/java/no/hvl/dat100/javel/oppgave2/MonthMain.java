@@ -1,6 +1,7 @@
 package no.hvl.dat100.javel.oppgave2;
 
 import no.hvl.dat100.javel.oppgave1.DayPowerData;
+import no.hvl.dat100.javel.oppgave1.DayMain;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -15,15 +16,35 @@ public class MonthMain {
         System.out.println("==============");
         System.out.println("OPPGAVE 2");
         System.out.println("==============");
-        System.out.println();
 
-        /*
-        TODO
+        // a)
+        DayMain.nyDelOppgave("a)");
+        MonthlyPower.print_PowerUsage(power_usage_month);
 
-         Write code that tests the methods you implement in the MonthlyPower class
-         Remember to teste the methods as you implement them
-         Remember to also to check that you get the expected results
-         */
+        // b)
+        DayMain.nyDelOppgave("b)");
+        MonthlyPower.print_PowerPrices(power_prices_month);
+
+        // c)
+        DayMain.nyDelOppgave("c)");
+        System.out.printf("%.2f, kWh ", MonthlyPower.computePowerUsage(power_usage_month));
+
+        // d)
+        DayMain.nyDelOppgave("d)");
+        System.out.println("Threshold 3: " + MonthlyPower.exceedThreshold(power_usage_month, 3));
+        System.out.println("Threshold 30000000: " + MonthlyPower.exceedThreshold(power_usage_month, 30000000));
+
+        // e)
+        DayMain.nyDelOppgave("e)");
+        System.out.printf("%.2f, NOK ", MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
+
+        // f)
+        DayMain.nyDelOppgave("f)");
+        System.out.printf("%.2f, NOK ", MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
+
+        // g)
+        DayMain.nyDelOppgave("g)");
+        System.out.printf("%.2f, NOK ", MonthlyPower.computeNorgesPrice(power_usage_month));
 
     }
 }
