@@ -27,7 +27,7 @@ public class MonthMain {
 
         // c)
         DayMain.nyDelOppgave("c)");
-        System.out.printf("%.2f, kWh ", MonthlyPower.computePowerUsage(power_usage_month));
+        System.out.printf("%.2f kWh ", MonthlyPower.computePowerUsage(power_usage_month));
 
         // d)
         DayMain.nyDelOppgave("d)");
@@ -36,15 +36,15 @@ public class MonthMain {
 
         // e)
         DayMain.nyDelOppgave("e)");
-        System.out.printf("%.2f, NOK ", MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
+        System.out.printf("%.2f NOK ", MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
 
         // f)
         DayMain.nyDelOppgave("f)");
-        System.out.printf("%.2f, NOK ", MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
+        System.out.printf("%.2f NOK ", MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
 
         // g)
         DayMain.nyDelOppgave("g)");
-        System.out.printf("%.2f, NOK ", MonthlyPower.computeNorgesPrice(power_usage_month));
+        System.out.printf("%.2f NOK ", MonthlyPower.computeNorgesPrice(power_usage_month));
 
     }
 }

@@ -20,7 +20,7 @@ public class MonthlyPower {
 
         for (int i = 0; i < prices.length; i++) {
             System.out.print("Day " + (i + 1) + ":");
-            DailyPower.printPowerUsage(prices[i]);
+            DailyPower.printPowerPrices(prices[i]);
             System.out.println("");
         }
 
@@ -86,9 +86,9 @@ public class MonthlyPower {
 
         double price = 0;
 
-        for (int i = 0; i < usage.length; i++) {
-            for (int j = 0; j < usage[i].length; j++) {
-                price += usage[i][j] * DailyPower.NORGESPRIS_KWH;
+        for (double[] day : usage) {
+            for (double hour : day) {
+                price += hour * DailyPower.NORGESPRIS_KWH;
             }
         }
 
